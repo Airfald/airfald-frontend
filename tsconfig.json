@@ -18,11 +18,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "baseUrl": ".",
     // true => react 找不到module
-    "noImplicitAny": false,
-		"typeRoots": ["node_modules/@types", "global.d.ts"],
+    // "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
 		"paths": {
 			"@src/*": ["src/*"],
 		}

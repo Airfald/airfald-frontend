@@ -1,6 +1,5 @@
 import React from 'react'
-import { store } from '@ice/stark-data'
-import * as constants from 'constants/index'
+import * as constants from '@src/constants/index'
 
 interface IAuthWrapperProps {
   /** 资源ID */
@@ -64,16 +63,17 @@ const hasAuth = (authList: any, label: string) => {
 const CAuthWrapper: React.FC<IAuthWrapperProps> = (
   props: IAuthWrapperProps
 ) => {
-  const permission = store.get(constants.XH_BAODU_PERSIMMION)
-  const { btnList } = permission
+  // const permission = store.get(constants.XH_BAODU_PERSIMMION)
+  // const { btnList } = permission
 
-  const auth = hasAuth(btnList, props.label)
+  // const auth = hasAuth(btnList, props.label)
 
-  if (auth) {
-    return props.children
-  } else {
-    return null
-  }
+  // if (auth) {
+  //   return props.children
+  // } else {
+  //   return null
+  // }
+  return null
 }
 
 /**
@@ -81,10 +81,10 @@ const CAuthWrapper: React.FC<IAuthWrapperProps> = (
  * @returns boolean
  */
 const checkAuth = (label: string) => {
-  const permission = store.get(constants.XH_BAODU_PERSIMMION)
-  const { btnList } = permission
+  // // const permission = store.get(constants.XH_BAODU_PERSIMMION)
+  // const { btnList } = permission
 
-  return hasAuth(btnList, label)
+  // return hasAuth(btnList, label)
 }
 
 export { CAuthWrapper, checkAuth }
