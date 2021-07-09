@@ -18,9 +18,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react",
+    "baseUrl": ".",
+    "noImplicitAny": true,
+		"typeRoots": ["node_modules/@types", "global.d.ts"],
+		"paths": {
+			"@src/*": ["src/*"],
+		}
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
