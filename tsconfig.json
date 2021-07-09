@@ -20,7 +20,8 @@
     "noEmit": true,
     "jsx": "react",
     "baseUrl": ".",
-    "noImplicitAny": true,
+    // true => react 找不到module
+    "noImplicitAny": false,
 		"typeRoots": ["node_modules/@types", "global.d.ts"],
 		"paths": {
 			"@src/*": ["src/*"],

@@ -1,0 +1,43 @@
+.c-block {
+  padding: 24px;
+  font-size: 18px;
+  color: #000;
+  background-color: #fff;
+
+  &-title {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &-text {
+    margin-right: 16px;
+    font-weight: 500;
+  }
+
+  &-title-tips {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+    line-height: 20px;
+  }
+
+  &-divide-line {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    margin-right: 10px;
+    width: 4px;
+    height: 14px;
+    vertical-align: middle;
+    background-color: #5B4EFF;
+  }
+
+  &-content {
+    margin-top: 30px;
+  }
+
+  &-content :global(.ant-form-item) {
+    margin-bottom: 32px;
+  }
+}
