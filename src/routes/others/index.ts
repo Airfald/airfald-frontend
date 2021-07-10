@@ -23,4 +23,4 @@ const routes = [
   }
 ]
 
-export default { routesName, routes }
+export default { routesName, routesPath, routes }

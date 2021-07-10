@@ -21,6 +21,11 @@ const routeNames = {
   ...others.routesName
 }
 
+const routePaths = {
+  ...demo.routesPath,
+  ...others.routesPath
+}
+
 const getRouteByName = (name: string) => {
   const curRoute = routes.find(item => item.name === name)
   if (!curRoute) {
@@ -36,6 +41,6 @@ const getRoutePathByName = (name: string) => {
   return route ? route.path : ''
 }
 
-export { getRouteByName, getRoutePathByName, routeNames }
+export { getRouteByName, getRoutePathByName, routeNames, routePaths }
 
 export default routes
