@@ -9,13 +9,16 @@
  */
 
 import demo from './demo'
+import others from './others'
 
 const routes = [
   ...demo.routes,
+  ...others.routes
 ]
 
 const routeNames = {
-  ...demo.routesName
+  ...demo.routesName,
+  ...others.routesName
 }
 
 const getRouteByName = (name: string) => {

@@ -1,6 +1,5 @@
 import storage from './storage'
-import * as Auth from 'constants/auth'
-import { XH_BAODU_SYSTEM } from '../constants/local'
+
 // 工具类函数
 export default {
   throttle(fn: Function, wait: number) {
@@ -26,13 +25,6 @@ export default {
       })
       .catch((err: Error) => [err])
   }
-}
-
-/**
- * 获取当前用户登录的渠道
- */
-export function getChannelByCache(): string | null {
-  return storage.get(Auth.system)
 }
 
 export function getLabelByEnumValue(dict: Array<any>, value: any) {

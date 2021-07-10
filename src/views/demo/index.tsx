@@ -1,14 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { GlobalContainer } from 'store'
 
 const Test: React.FC = () => {
   useEffect(() => {
     console.log(process.env)
   }, [])
   const ref = useRef<any>(null)
-
-  const { module1, setModule1, module2 } = GlobalContainer.useContainer()
-  console.log(module1, module2)
 
   const [content, setContent] = useState('')
 

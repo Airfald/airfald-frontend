@@ -1,0 +1,160 @@
+.menuToggle {
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menuIcon {
+    width: 18px;
+}
+
+.logo {
+    position: relative;
+    bottom: 2px;
+    padding: 0 24px;
+    height: 100%;
+    float: left;
+}
+
+.logo::after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    margin-left: 24px;
+    background-color: #d8d8d8;
+    vertical-align: middle;
+}
+
+.person {
+    height: 100%;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.logoutLink {
+    width: 110px;
+}
+
+.roleNameWrap {
+    height: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #888888;
+    background: #f0f0f0;
+    border-radius: 11px;
+    border: none;
+    margin-left: 8px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+    cursor: pointer;
+}
+
+.roleName {
+    display: inline-block;
+    align-items: center;
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.roleNameNoAuth {
+    display: flex;
+    align-items: center;
+    width: 120px;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.popover :global(.ant-popover-inner-content) {
+    padding: 0;
+    width: 260px;
+}
+
+.doubleTabRoleContent {
+    padding-bottom: 20px;
+}
+
+.doubleTabRoleContent :global(.ant-tabs-nav) {
+    width: 100%;
+}
+
+.doubleTabRoleContent :global(.ant-tabs-tab) {
+    width: 50%;
+    margin: 0;
+    text-align: center;
+}
+
+.doubleTabRoleContent :global(.ant-tabs-bar) {
+    margin: 0;
+}
+
+.singleTabRoleContent {
+    padding-bottom: 20px;
+}
+
+.singleTabRoleContent>header {
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333333;
+    padding-left: 35px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.singleTabRoleContent>ul,
+.doubleTabRoleContent ul {
+    padding: 8px 20px;
+    height: 300px;
+    overflow: auto;
+}
+
+.singleTabRoleContent>ul>li,
+.doubleTabRoleContent ul>li {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 15px;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.singleTabRoleContent ul>li.selected,
+.doubleTabRoleContent ul>li.selected {
+    color: #1DCC74;
+}
+
+.singleTabRoleContent>ul>li:hover,
+.doubleTabRoleContent ul>li:hover {
+    background: #f0f0f0;
+}
+
+.singleTabRoleContent>footer,
+.doubleTabRoleContent footer {
+    margin: 0 20px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #e6e6e6;
+    color: #ff4e50;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+}
