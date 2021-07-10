@@ -9,19 +9,15 @@ import { Layout } from 'antd';
 import routes, { routePaths } from '@src/routes'
 import './index.scss'
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Sider, Content } = Layout;
 
 const prefixCls = 'root-layout'
 
 const Root: React.FC = () => {
-  console.log('进入 root layout')
-
   const currLocation =  useLocation();
   const history = useHistory();
 
   useEffect(() => {
-    console.log(currLocation)
-
     const route = routes.find(item => item.path.includes(currLocation.pathname))
     if (route) return
 

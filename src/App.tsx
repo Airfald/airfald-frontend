@@ -6,6 +6,11 @@ import {
 } from 'react-router-dom';
 import PrivateRoute from '@src/layout/PrivateRoute'
 import Root from '@src/layout/Root'
+import Login from '@src/views/Login'
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/es/locale-provider/zh_CN';
+import 'moment/locale/zh-cn';
+import 'antd/dist/antd.css';
 
 import './App.scss';
 
@@ -22,10 +27,12 @@ const App: React.FC = () => {
   )
 
   return (
-    routerRender()
+    <ConfigProvider locale={zhCN}>
+      {
+        routerRender()
+      }
+    </ConfigProvider>
   );
 }
-
-const Login = () => <div>'Login'</div>
 
 export default App;
