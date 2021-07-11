@@ -1,11 +1,14 @@
 import React from 'react'
-import { Form, Input, Button, Checkbox } from 'antd'
+import { Form, Input, Button, Checkbox, message } from 'antd'
 import {
   useHistory
 } from 'react-router-dom'
+import { routePaths } from '@src/routes'
+import Storage from '@src/utils/storage'
+import { sleep } from '@src/utils/tools'
+import * as commonService from '@src/services/common'
 
 import './index.scss'
-import { routePaths } from '@src/routes'
 
 const prefixCls = 'login'
 
@@ -22,12 +25,24 @@ const formRules = {
 const Login: React.FC = () => {
   const history = useHistory()
 
-  const onFinish = (values: any) => {
+  const onFinish = async (values: any) => {
     console.log('Success:', values);
     const { username, password } = values
-    // TODO
+    // TODO clear catch
 
-    history.push(routePaths.home)
+    try {
+      const res = await commonService.login({
+        username,
+        password
+      })
+      message.success('登录成功')
+      Storage.set('token', res.access_token)
+
+      await sleep(1000)
+      history.push(routePaths.home)
+    } catch (error) {
+      message.error(error.message)
+    }
   };
 
   const onFinishFailed = (errorInfo: any) => {

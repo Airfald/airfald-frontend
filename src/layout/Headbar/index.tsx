@@ -4,6 +4,8 @@ import {
   useHistory
 } from 'react-router-dom'
 import { routePaths } from '@src/routes'
+import Storage from '@src/utils/storage'
+
 import './index.scss'
 
 const prefixCls = 'head-bar'
@@ -12,6 +14,8 @@ const Headbar: React.FC = function(props) {
   const history = useHistory()
 
   const logout = () => {
+    Storage.clear()
+
     history.replace(routePaths.login)
   }
 

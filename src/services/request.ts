@@ -1,6 +1,7 @@
 import { AxiosResponse } from 'axios'
 import Request, { ResError, IResStandardRet } from '@src/utils/http'
 import * as consts from '@src/constants'
+import Storage from '@src/utils/storage'
 
 interface IResponse {
   data?: any
@@ -12,7 +13,10 @@ interface IResponse {
 
 const request = new Request({
   defaults: {
-    // process.env.REACT_APP_API_BASE_PATH_XH
+    baseURL: 'http://localhost:3000',
+    headers: {
+      authorization: `Bearer ${Storage.get('token')}`
+    }
   },
   interceptors: {
     onFulfilled: (res: AxiosResponse<IResponse>) => {
@@ -61,8 +65,9 @@ const request = new Request({
       }
 
       if (err.response.status === consts.RES_UNAUTHORIZED_CODE) {
-        localStorage.clear()
-        // window.location.href = services.getLogoutUri()
+        // Storage.clear()
+
+        // window.location.href = `${window.location.origin}/login`
       }
 
       const { code, msg, data } = err.response.data as IResponse

@@ -1,4 +1,5 @@
 import storage from './storage'
+import { resolve } from 'dns'
 
 // 工具类函数
 export default {
@@ -31,4 +32,12 @@ export function getLabelByEnumValue(dict: Array<any>, value: any) {
   const item = dict.find(item => item.value === value)
 
   return item ? item.label : null
+}
+
+export function sleep (time?: number) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve()
+    }, time || 2000)
+  })
 }

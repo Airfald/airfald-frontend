@@ -5,14 +5,15 @@ import {
   useHistory,
   useLocation,
 } from 'react-router-dom'
-import { Layout } from 'antd';
+import { Layout, message } from 'antd';
 import routes, { routePaths } from '@src/routes'
+import * as commonService from '@src/services/common'
 import SideMenu from '../SideMenu'
 import Headbar from '../Headbar'
 
 import './index.scss'
 
-const { Header, Sider, Content } = Layout;
+const { Sider, Content } = Layout;
 
 const prefixCls = 'root-layout'
 
@@ -25,6 +26,18 @@ const Root: React.FC = () => {
   const toggleCollapsed = () => {
     setSiderCollapsed(!siderCollapsed)
   };
+
+  const check = async () => {
+    try {
+      await commonService.check()
+    } catch (error) {
+      message.error(error.message)
+    }
+  };
+
+  useEffect(() => {
+    check()
+  }, [])
 
   useEffect(() => {
     const route = routes.find(item => item.path.includes(currLocation.pathname))
