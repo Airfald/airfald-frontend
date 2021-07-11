@@ -1,0 +1,18 @@
+$class-prefix: "side-menu";
+
+.#{$class-prefix} {
+  height: 100vh;
+  background-color: #001529;
+  padding: 24px 0;
+  &-logo {
+    height: 64px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+  }
+  &-collapsed {
+    position: absolute;
+    bottom: 30px;
+    padding: 20px;
+  }
+}

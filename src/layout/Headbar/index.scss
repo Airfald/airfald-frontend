@@ -1,0 +1,15 @@
+$class-prefix: "head-bar";
+
+.#{$class-prefix} {
+  position: relative;
+  height: 64px;
+  background-color: #fff;
+
+  &-name {
+    position: absolute;
+    top: 24px;
+    right: 80px;
+    color: #000;
+    cursor: pointer;
+  }
+}

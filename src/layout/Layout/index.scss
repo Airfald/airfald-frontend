@@ -1,8 +1,11 @@
 $class-prefix: "root-layout";
 
 .#{$class-prefix} {
-  // display: flex;
   &-sub-layout {
     display: flex;
+  }
+
+  &-header {
+    background-color: #ffffff;
   }
 }

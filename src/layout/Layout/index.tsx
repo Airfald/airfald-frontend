@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Switch,
   Route,
@@ -7,6 +7,9 @@ import {
 } from 'react-router-dom'
 import { Layout } from 'antd';
 import routes, { routePaths } from '@src/routes'
+import SideMenu from '../SideMenu'
+import Headbar from '../Headbar'
+
 import './index.scss'
 
 const { Header, Sider, Content } = Layout;
@@ -17,6 +20,12 @@ const Root: React.FC = () => {
   const currLocation =  useLocation();
   const history = useHistory();
 
+  const [siderCollapsed, setSiderCollapsed] = useState<boolean>(false)
+
+  const toggleCollapsed = () => {
+    setSiderCollapsed(!siderCollapsed)
+  };
+
   useEffect(() => {
     const route = routes.find(item => item.path.includes(currLocation.pathname))
     if (route) return
@@ -26,11 +35,22 @@ const Root: React.FC = () => {
 
   return (
     <Layout className={`${prefixCls}`}>
-      <Header style={{ background: '#fff', display: 'flex', width: '100%', textAlign: 'center', padding: 0 }}>Header</Header>
+      <Sider
+        trigger={null}
+        collapsible
+        defaultCollapsed
+        collapsedWidth={80}
+        collapsed={siderCollapsed}
+        width={180}
+      >
+        <SideMenu
+          collapsed={siderCollapsed}
+          toggleCollapsed={toggleCollapsed}
+        >
+        </SideMenu>
+      </Sider>
       <Layout className={`${prefixCls}-sub-layout`}>
-        <Sider width={180} style={{ background : 'red' }}>
-          Sider
-        </Sider>
+        <Headbar />
         <Content style={{ margin: '24px 16px 0' }}>
           <Switch>
             {routes.map((route: any, index) => (

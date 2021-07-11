@@ -1,10 +1,8 @@
 # airfald-frontend
 
-- 登录
-- 权限
 - ant-design baseLayout
 - deploy
-- 接口
+- 接口 clearCatch
 
 
 

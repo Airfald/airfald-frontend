@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 
 const NotFound: React.FC = () => {
   return (
-    <div>404</div>
+    <div>home</div>
   )
 }
 
