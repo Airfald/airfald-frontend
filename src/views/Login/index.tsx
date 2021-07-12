@@ -7,6 +7,7 @@ import { routePaths } from '@src/routes'
 import Storage from '@src/utils/storage'
 import { sleep } from '@src/utils/tools'
 import * as commonService from '@src/services/common'
+import request from '@src/services/request'
 
 import './index.scss'
 
@@ -36,6 +37,7 @@ const Login: React.FC = () => {
         password
       })
       message.success('登录成功')
+      request.instance.defaults.headers.common['authorization'] = `Bearer ${res.access_token}`
       Storage.set('token', res.access_token)
 
       await sleep(1000)

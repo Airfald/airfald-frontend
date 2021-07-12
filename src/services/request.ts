@@ -13,10 +13,7 @@ interface IResponse {
 
 const request = new Request({
   defaults: {
-    baseURL: 'http://localhost:3000',
-    headers: {
-      authorization: `Bearer ${Storage.get('token')}`
-    }
+    baseURL: 'http://localhost:3000'
   },
   interceptors: {
     onFulfilled: (res: AxiosResponse<IResponse>) => {
